@@ -1,5 +1,6 @@
 package org.example;
 
+import org.junit.jupiter.api.Disabled;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 
@@ -42,6 +43,13 @@ public class CalculatorTest {
     @Test
     public void factorialNegativeNumber_shouldThrowException() {
         assertThrows(ArithmeticException.class, () -> getFactorialOfNumber(-1));
+    }
+
+    @Disabled("Test to cause integer overflow is disabled until method is tail recursive")
+    @DisplayName("13! is causes integer overflow and should throw IllegalArgumentException")
+    @Test
+    public void factorialThirteen_shouldThrowException() {
+        assertThrows(IllegalArgumentException.class, () -> getFactorialOfNumber(13));
     }
 
     /**
