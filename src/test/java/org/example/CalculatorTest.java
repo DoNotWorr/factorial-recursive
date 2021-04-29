@@ -3,6 +3,7 @@ package org.example;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 public class CalculatorTest {
 
@@ -18,6 +19,16 @@ public class CalculatorTest {
 
         //Assert
         assertEquals(expected, actual);
+    }
+
+    @Test
+    public void factorialNegativeNumber_shouldThrowException() {
+        //Arrange
+        Calculator calculator = new Calculator();
+        int value = -1;
+
+        //Act, Assert
+        assertThrows(ArithmeticException.class, () -> calculator.factorial(value));
     }
 }
 
