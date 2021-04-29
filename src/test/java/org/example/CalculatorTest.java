@@ -9,24 +9,12 @@ public class CalculatorTest {
 
     @Test
     public void factorialZero_shouldReturnOne() {
-        //Arrange
-        int expected = 1;
-        int value = 0;
-
-        //Act
-        int actual = getFactorialOfNumber(value);
-
-        //Assert
-        assertEquals(expected, actual);
+        assertEquals(1, getFactorialOfNumber(0));
     }
 
     @Test
     public void factorialNegativeNumber_shouldThrowException() {
-        //Arrange
-        int value = -1;
-
-        //Act, Assert
-        assertThrows(ArithmeticException.class, () -> getFactorialOfNumber(value));
+        assertThrows(ArithmeticException.class, () -> getFactorialOfNumber(-1));
     }
 
     /**
