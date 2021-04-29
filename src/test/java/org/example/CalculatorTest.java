@@ -44,6 +44,18 @@ public class CalculatorTest {
         assertThrows(ArithmeticException.class, () -> getFactorialOfNumber(-1));
     }
 
+    @DisplayName("13! causes integer overflow and should throw IllegalArgumentException")
+    @Test
+    public void factorialThirteen_shouldThrowException() {
+        assertThrows(IllegalArgumentException.class, () -> getFactorialOfNumber(13));
+    }
+
+    @DisplayName("Integer.MAX_VALUE! causes integer overflow and should throw IllegalArgumentException")
+    @Test
+    public void factorialIntMaxValue_shouldThrowException() {
+        assertThrows(IllegalArgumentException.class, () -> getFactorialOfNumber(Integer.MAX_VALUE));
+    }
+
     /**
      * Creates instance of Calculator and uses factorial method on the argument
      *
