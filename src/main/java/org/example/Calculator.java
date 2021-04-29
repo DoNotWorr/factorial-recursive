@@ -27,6 +27,9 @@ public class Calculator {
         if (n == 0) {
             return accumulator;
         }
+        if (Integer.MAX_VALUE / accumulator < n) {
+            throw new IllegalArgumentException("Factorial of " + n + " is too big to store in Integer");
+        }
         return factorial(n - 1, n * accumulator);
     }
 }
