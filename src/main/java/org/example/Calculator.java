@@ -7,7 +7,8 @@ public class Calculator {
      *
      * @param n number to calculate factorial of
      * @return n factorial (n!)
-     * @throws ArithmeticException when factorial is undefined for n (negative n)
+     * @throws ArithmeticException      when n is negative. Factorial is undefined for negative numbers
+     * @throws IllegalArgumentException if n factorial causes integer overflow
      */
     public int factorial(int n) {
         if (n < 0) {
@@ -22,6 +23,7 @@ public class Calculator {
      * @param n           number to calculate factorial of
      * @param accumulator stores the value through each recursion
      * @return n factorial (n!)
+     * @throws IllegalArgumentException if accumulator is affected by integer overflow
      */
     private int factorial(int n, int accumulator) throws IllegalArgumentException {
         if (n == 0) {
