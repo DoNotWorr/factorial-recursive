@@ -26,6 +26,18 @@ public class CalculatorTest {
         assertEquals(2, getFactorialOfNumber(2));
     }
 
+    @DisplayName("3! should be 6")
+    @Test
+    public void factorialThree_shouldReturnSix() {
+        assertEquals(6, getFactorialOfNumber(3));
+    }
+
+    @DisplayName("12! should be 479001600")
+    @Test
+    public void factorialTwelve_shouldReturnBigNumber() {
+        assertEquals(479001600, getFactorialOfNumber(12));
+    }
+
     @DisplayName("(-1)! is undefined and should throw ArithmeticException")
     @Test
     public void factorialNegativeNumber_shouldThrowException() {
