@@ -10,12 +10,11 @@ public class CalculatorTest {
     @Test
     public void factorialZero_shouldReturnOne() {
         //Arrange
-        Calculator calculator = new Calculator();
         int expected = 1;
         int value = 0;
 
         //Act
-        int actual = calculator.factorial(value);
+        int actual = getFactorialOfNumber(value);
 
         //Assert
         assertEquals(expected, actual);
@@ -24,11 +23,20 @@ public class CalculatorTest {
     @Test
     public void factorialNegativeNumber_shouldThrowException() {
         //Arrange
-        Calculator calculator = new Calculator();
         int value = -1;
 
         //Act, Assert
-        assertThrows(ArithmeticException.class, () -> calculator.factorial(value));
+        assertThrows(ArithmeticException.class, () -> getFactorialOfNumber(value));
+    }
+
+    /**
+     * Creates instance of Calculator and uses factorial method on the argument
+     *
+     * @param n the number to use
+     * @return n factorial (n!)
+     */
+    private int getFactorialOfNumber(int n) {
+        return new Calculator().factorial(n);
     }
 }
 
