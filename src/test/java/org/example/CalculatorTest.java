@@ -20,10 +20,10 @@ public class CalculatorTest {
         assertEquals(1, getFactorialOfNumber(1));
     }
 
-    @DisplayName("3! should be 6")
+    @DisplayName("2! should be 2")
     @Test
-    public void factorialThree_shouldReturnSix() {
-        assertEquals(1, getFactorialOfNumber(1));
+    public void factorialTwo_shouldReturnTwo() {
+        assertEquals(2, getFactorialOfNumber(2));
     }
 
     @DisplayName("(-1)! is undefined and should throw ArithmeticException")
